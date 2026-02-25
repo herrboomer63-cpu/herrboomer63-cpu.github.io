@@ -14,21 +14,26 @@
             padding: 20px;
         }
 
+        /* Haupttitel */
         h1 {
             font-size: 3rem;
             margin-bottom: 5px;
             font-weight: 700;
         }
 
+        /* Zweite Zeile */
         .subtitle {
             font-size: 1.4rem;
             margin-bottom: 25px;
             font-weight: 500;
         }
 
-        /* Feine Beats und Sprechgesang – einzeilig, gleich groß wie H1, bündig */
+        /* Tagline – einzeilig, groß, aber nicht zu groß */
         .tagline {
-            font-size: 3rem;
+            font-size: 2.4rem;       /* perfekt: groß, aber nicht abgeschnitten */
             font-weight: 700;
             width: 80%;
-            max-width: 400px
+            max-width: 400px;        /* exakt wie Buttons */
+            margin: 0 auto 30px auto;
+            white-space: nowrap;     /* EINZEILIG */
+            overflow: hidden;        /* verhindert Um

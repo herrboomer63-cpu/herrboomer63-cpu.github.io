@@ -21,23 +21,23 @@
             font-weight: 700;
         }
 
-        /* Zweite Zeile: präsentiert */
+        /* Zweite Zeile */
         .subtitle {
             font-size: 1.4rem;
             margin-bottom: 25px;
             font-weight: 500;
         }
 
-        /* Feine Beats und Sprechgesang – einzeilig */
+        /* Feine Beats und Sprechgesang – einzeilig, gleich groß wie H1 */
         .tagline {
-            font-size: 2rem;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: 700;
             width: 80%;
-            max-width: 400px;   /* bündig mit Buttons */
+            max-width: 400px;   /* exakt bündig mit Buttons */
             margin: 0 auto 30px auto;
-            white-space: nowrap; /* EINZEILIG erzwingen */
+            white-space: nowrap; /* EINZEILIG */
             overflow: hidden;
-            text-overflow: ellipsis;
+            text-overflow: clip;
         }
 
         /* Button-Liste */
@@ -52,4 +52,28 @@
         }
 
         .social-links a {
-            display
+            display: inline-block;
+            width: 80%;
+            max-width: 400px;
+            padding: 14px 20px;
+            background: #008000;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            background: #006600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Herr Boomer</h1>
+
+    <div class="subtitle">präsentiert</div>
+
+    <div class="tagline">Feine Beats und Sprechgesang</div>

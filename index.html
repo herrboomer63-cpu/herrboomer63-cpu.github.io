@@ -6,13 +6,13 @@
     <title>Herr Boomer</title>
 
     <!-- CACHE-BUSTER -->
-    <meta name="version" content="v1.0.4">
+    <meta name="version" content="v1.0.6">
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            color: #000;
+            background: #f2f2f2; /* HELLER Hintergrund */
+            color: #000; /* SCHWARZER Text */
             text-align: center;
             padding: 20px;
         }
@@ -32,10 +32,62 @@
 
         /* "Feine Beats..." kleiner */
         h2 {
-            margin-top: 20px;
-            font-size: 1.4rem;
-            font-weight: 500;
+            margin-top: 10px;
+            font-size: 1.3rem;
+            font-weight: 400;
             margin-bottom: 25px;
         }
 
-        /* BUTTON
+        /* BUTTON-STYLING */
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-links li {
+            margin: 12px 0;
+        }
+
+        /* ALLE BUTTONS GRÜN + SICHTBARER TEXT */
+        .social-links a {
+            display: inline-block;
+            width: 80%;
+            max-width: 400px;
+            padding: 14px 20px;
+            background: #008000; /* GRÜN */
+            color: #000; /* SCHWARZER TEXT → SICHTBAR */
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            background: #006400;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Herr Boomer</h1>
+
+    <p class="subtitle">präsentiert</p>
+
+    <h2>Feine Beats und Sprechgesang</h2>
+
+    <div class="social-links">
+        <ul>
+            <li><a href="https://www.instagram.com/herrboomer63/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@HerrBoomer63" target="_blank">YouTube</a></li>
+            <li><a href="https://www.facebook.com/herrboomer63/" target="_blank">Facebook</a></li>
+            <li><a href="https://open.spotify.com/intl-de/artist/4zy0KPBe5emsocYdYbBS6H" target="_blank">Spotify</a></li>
+            <li><a href="https://music.apple.com/de/artist/herr-boomer/1807715140" target="_blank">Apple Music</a></li>
+            <li><a href="https://tidal.com/artist/57741872" target="_blank">Tidal</a></li>

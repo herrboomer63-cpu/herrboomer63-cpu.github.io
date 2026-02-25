@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herr Boomer</title>
 
-    <meta name="version" content="v1.0.0">
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,18 +14,66 @@
             padding: 20px;
         }
 
+        /* Haupttitel */
         h1 {
             font-size: 3rem;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .subtitle {
-            font-size: 1.8rem;
-            margin-top: 10px;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        /* WICHTIG: Feine Beats und Sprechgesang */
+        /* Untertitel Feine Beats und Sprechgesang */
         .tagline {
-            font-size: 3rem
+            font-size: 1.8rem;        /* NICHT so groß wie Herr Boomer */
+            font-weight: 600;
+            width: 80%;               /* bündig mit Buttons */
+            max-width: 400px;         /* bündig mit Buttons */
+            margin: 0 auto 30px auto; /* zentriert */
+            line-height: 1.3;
+        }
+
+        /* Button-Liste */
+        .social-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .social-links li {
+            margin: 12px 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 80%;
+            max-width: 400px;
+            padding: 14px 20px;
+            background: #008000;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .social-links a:hover {
+            background: #006600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Herr Boomer</h1>
+
+    <div class="tagline">Feine Beats und Sprechgesang</div>
+
+    <div class="social-links">
+        <ul>
+            <li><a href="https://www.youtube.com/@herrboomer63">YouTube</a></li>
+            <li><a href="https://www.instagram.com/herrboomer63">Instagram</a></li>
+            <li><a href="https://open.spotify.com/artist/0x0">Spotify</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

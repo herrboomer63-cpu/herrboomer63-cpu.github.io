@@ -14,6 +14,12 @@
       gtag('config', 'AW-17517951264');
     </script>
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFX030LZ3Q"></script>
+    <script>
+      gtag('config', 'G-CFX030LZ3Q');
+    </script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,79 +38,3 @@
         .subtitle {
             font-size: 1.4rem;
             margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .tagline {
-            font-size: 1.6rem;
-            font-weight: 700;
-            width: 80%;
-            max-width: 400px;
-            margin: 0 auto 30px auto;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .social-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .social-links li {
-            margin: 12px 0;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 80%;
-            max-width: 400px;
-            padding: 14px 20px;
-            background: #008000;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.2s;
-        }
-
-        .social-links a:hover {
-            background: #006600;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Herr Boomer</h1>
-
-    <div class="subtitle">präsentiert</div>
-
-    <div class="tagline">Feine Beats und Sprechgesang</div>
-
-    <div class="social-links">
-        <ul>
-            <li><a class="track" href="https://open.spotify.com/intl-de/artist/4zy0KPBe5emsocYdYbBS6H">Spotify</a></li>
-            <li><a class="track" href="https://www.instagram.com/herrboomer63/">Instagram</a></li>
-            <li><a class="track" href="https://www.youtube.com/@HerrBoomer63">YouTube</a></li>
-            <li><a class="track" href="https://www.facebook.com/herrboomer63/">Facebook</a></li>
-            <li><a class="track" href="https://music.apple.com/de/artist/herr-boomer/1807715140">Apple Music</a></li>
-            <li><a class="track" href="https://tidal.com/artist/57741872">Tidal</a></li>
-            <li><a class="track" href="https://music.amazon.de/artists/B0F66R9XNX/herr-boomer">Amazon Music</a></li>
-            <li><a class="track" href="https://herr-boomer.myspreadshop.de/">Gönnt euch mal was</a></li>
-        </ul>
-    </div>
-
-    <!-- Conversion Event für ALLE Buttons -->
-    <script>
-        document.querySelectorAll('.track').forEach(function(el) {
-            el.addEventListener('click', function() {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB'
-                });
-            });
-        });
-    </script>
-
-</body>
-</html>

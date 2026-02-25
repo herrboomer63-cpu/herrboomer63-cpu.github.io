@@ -1,35 +1,54 @@
-<div class="social-section">
-    <h2>Folgt mir überall</h2>
+<style>
+.social-section {
+    text-align: center;
+    margin-top: 40px;
+}
 
-    <div class="social-grid">
+.social-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-        <a class="social-btn instagram" href="https://www.instagram.com/herrboomer63/" target="_blank">
-            <span>📸 Instagram</span>
-        </a>
+.social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
 
-        <a class="social-btn youtube" href="https://www.youtube.com/@HerrBoomer63" target="_blank">
-            <span>▶️ YouTube</span>
-        </a>
+.social-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+    min-width: 220px;
+    text-align: center;
+}
 
-        <a class="social-btn facebook" href="https://www.facebook.com/herrboomer63/" target="_blank">
-            <span>📘 Facebook</span>
-        </a>
+/* Hover-Effekt */
+.social-btn:hover {
+    transform: scale(1.07);
+    opacity: 0.9;
+}
 
-        <a class="social-btn spotify" href="https://open.spotify.com/intl-de/artist/4zy0KPBe5emsocYdYbBS6H" target="_blank">
-            <span>🎵 Spotify</span>
-        </a>
+/* Plattform-Farben */
+.instagram { background: #E1306C; }
+.youtube   { background: #FF0000; }
+.facebook  { background: #1877F2; }
+.spotify   { background: #1DB954; color: #000; }
+.apple     { background: #555; }
+.tidal     { background: #000; }
+.amazon    { background: #FF9900; color: #000; }
 
-        <a class="social-btn apple" href="https://music.apple.com/de/artist/herr-boomer/1807715140" target="_blank">
-            <span>🍎 Apple Music</span>
-        </a>
-
-        <a class="social-btn tidal" href="https://tidal.com/artist/57741872" target="_blank">
-            <span>🌊 Tidal</span>
-        </a>
-
-        <a class="social-btn amazon" href="https://music.amazon.de/artists/B0F66R9XNX/herr-boomer" target="_blank">
-            <span>🛒 Amazon Music</span>
-        </a>
-
-        <a class="social-btn shop" href="https://herr-boomer.myspreadshop.de/" target="_blank">
-            <span>🤑 Gönnt euch mal was</span>
+/* Shop-Button extra */
+.shop {
+    background: #008000;
+}
+.shop:hover {
+    background: #006400;
+}
+</style>

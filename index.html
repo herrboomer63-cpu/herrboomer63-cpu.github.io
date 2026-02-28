@@ -93,30 +93,29 @@
 
     <div class="social-links">
         <ul>
-            <li><a class="track" href="https://open.spotify.com/intl-de/artist/4zy0KPBe5emsocYdYbBS6H">Spotify</a></li>
-            <li><a class="track" href="https://www.instagram.com/herrboomer63/">Instagram</a></li>
-            <li><a class="track" href="https://www.youtube.com/@HerrBoomer63">YouTube</a></li>
-            <li><a class="track" href="https://www.facebook.com/herrboomer63/">Facebook</a></li>
-            <li><a class="track" href="https://music.apple.com/de/artist/herr-boomer/1807715140">Apple Music</a></li>
-            <li><a class="track" href="https://tidal.com/artist/57741872">Tidal</a></li>
-            <li><a class="track" href="https://music.amazon.de/artists/B0F66R9XNX/herr-boomer">Amazon Music</a></li>
-            <li><a class="track" href="https://herr-boomer.myspreadshop.de/">Gönnt euch mal was</a></li>
+            <li><a class="track" href="https://open.spotify.com/intl-de/artist/4zy0KPBe5emsocYdYbBS6H" target="_blank">Spotify</a></li>
+            <li><a class="track" href="https://www.instagram.com/herrboomer63/" target="_blank">Instagram</a></li>
+            <li><a class="track" href="https://www.youtube.com/@HerrBoomer63" target="_blank">YouTube</a></li>
+            <li><a class="track" href="https://www.facebook.com/herrboomer63/" target="_blank">Facebook</a></li>
+            <li><a class="track" href="https://music.apple.com/de/artist/herr-boomer/1807715140" target="_blank">Apple Music</a></li>
+            <li><a class="track" href="https://tidal.com/artist/57741872" target="_blank">Tidal</a></li>
+            <li><a class="track" href="https://music.amazon.de/artists/B0F66R9XNX/herr-boomer" target="_blank">Amazon Music</a></li>
+            <li><a class="track" href="https://herr-boomer.myspreadshop.de/" target="_blank">Gönnt euch mal was</a></li>
         </ul>
     </div>
 
-    <!-- Conversion Event für ALLE Buttons (mit Verzögerung) -->
+    <!-- Conversion Event für ALLE Buttons (mit Verzögerung + neuem Tab) -->
     <script>
     document.querySelectorAll('.track').forEach(function(el) {
         el.addEventListener('click', function(event) {
-            event.preventDefault(); // verhindert sofortiges Weiterleiten
 
+            // Conversion senden
             gtag('event', 'conversion', {
                 'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB'
             });
 
-            setTimeout(() => {
-                window.location.href = el.href;
-            }, 300); // 300ms warten, damit der Hit gesendet wird
+            // Kein preventDefault nötig, da target="_blank"
+            // Der Hit wird gesendet, weil die Seite offen bleibt
         });
     });
     </script>

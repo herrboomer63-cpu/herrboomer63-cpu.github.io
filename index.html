@@ -104,15 +104,21 @@
         </ul>
     </div>
 
-    <!-- Conversion Event für ALLE Buttons -->
+    <!-- Conversion Event für ALLE Buttons (mit Verzögerung) -->
     <script>
-        document.querySelectorAll('.track').forEach(function(el) {
-            el.addEventListener('click', function() {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB'
-                });
+    document.querySelectorAll('.track').forEach(function(el) {
+        el.addEventListener('click', function(event) {
+            event.preventDefault(); // verhindert sofortiges Weiterleiten
+
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB'
             });
+
+            setTimeout(() => {
+                window.location.href = el.href;
+            }, 300); // 300ms warten, damit der Hit gesendet wird
         });
+    });
     </script>
 
 </body>

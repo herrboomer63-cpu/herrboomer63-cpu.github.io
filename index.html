@@ -16,63 +16,14 @@
     <!-- End Google Tag Manager -->
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            color: #000;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .tagline {
-            font-size: 1.6rem;
-            font-weight: 700;
-            width: 80%;
-            max-width: 400px;
-            margin: 0 auto 30px auto;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .social-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .social-links li {
-            margin: 12px 0;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 80%;
-            max-width: 400px;
-            padding: 14px 20px;
-            background: #008000;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.2s;
-        }
-
-        .social-links a:hover {
-            background: #006600;
-        }
+        body { font-family: Arial, sans-serif; background: #f2f2f2; color: #000; text-align: center; padding: 20px; }
+        h1 { font-size: 3rem; margin-bottom: 5px; font-weight: 700; }
+        .subtitle { font-size: 1.4rem; margin-bottom: 20px; font-weight: 500; }
+        .tagline { font-size: 1.6rem; font-weight: 700; width: 80%; max-width: 400px; margin: 0 auto 30px auto; white-space: nowrap; overflow: hidden; }
+        .social-links ul { list-style: none; padding: 0; margin: 0; }
+        .social-links li { margin: 12px 0; }
+        .social-links a { display: inline-block; width: 80%; max-width: 400px; padding: 14px 20px; background: #008000; color: #fff; text-decoration: none; font-size: 1.3rem; font-weight: bold; border-radius: 8px; transition: 0.2s; }
+        .social-links a:hover { background: #006600; }
     </style>
 </head>
 <body>
@@ -99,21 +50,27 @@
         </ul>
     </div>
 
-<script>
-  // Klicks auf externe Links an GA4 senden
-  const trackLinks = document.querySelectorAll('a.track');
+    <script>
+    // Klick-Tracking für externe Links via GTM
+    const trackLinks = document.querySelectorAll('a.track');
 
-  trackLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      gtag('event', 'outbound_link_click', {
-        'event_category': 'engagement',
-        'event_label': this.textContent.trim(),
-        'transport_type': 'beacon'
-      });
-      // Kein preventDefault – der Link öffnet sich normal im neuen Tab
+    trackLinks.forEach(link => {
+        link.addEventListener('click', function(e){
+            e.preventDefault(); // verhindert sofortiges Öffnen
+            // Event über dataLayer an GTM senden
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'outbound_link_click',
+                'event_category': 'engagement',
+                'event_label': this.textContent.trim()
+            });
+            // Link nach kurzem Delay öffnen, damit Event gesendet wird
+            setTimeout(() => {
+                window.open(this.href, '_blank');
+            }, 200);
+        });
     });
-  });
-</script>
+    </script>
 
 </body>
 </html>

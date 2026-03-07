@@ -43,29 +43,35 @@
 </div>
 
 <script>
-  // Klick-Tracking für GA4 + Google Ads Conversion
+  // Google Ads Conversion-ID und Label
+  const ADS_ID = 'AW-17517951264';
+  const ADS_LABEL = 'WfswCJz7n_4bEKDymqFB';
+
+  // Klick-Tracking für alle .track Links
   const trackLinks = document.querySelectorAll('a.track');
 
   trackLinks.forEach(link => {
-    link.addEventListener('click', function(e){
-      // GA4 Event
+    link.addEventListener('click', function(event){
+
+      // 1️⃣ GA4 Event
       gtag('event', 'outbound_link_click', {
         'event_category': 'engagement',
         'event_label': this.href,
         'transport_type': 'beacon'
       });
 
-      // Google Ads Conversion
+      // 2️⃣ Google Ads Conversion Event
       gtag('event', 'conversion', {
-        'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB',
-        'event_callback': function() {
-          window.open(link.href, '_blank');
-        }
+        'send_to': `${ADS_ID}/${ADS_LABEL}`,
+        'value': 1.0,
+        'currency': 'EUR',
+        'event_category': 'engagement',
+        'event_label': this.href,
+        'transport_type': 'beacon'
       });
 
-      // Fallback: Öffnet Link, falls Callback verzögert
-      e.preventDefault();
-      setTimeout(() => window.open(link.href, '_blank'), 1500);
+      // Link im neuen Tab öffnen
+      window.open(this.href, '_blank');
     });
   });
 </script>

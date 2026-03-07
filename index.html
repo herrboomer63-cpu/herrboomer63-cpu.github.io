@@ -43,18 +43,29 @@
 </div>
 
 <script>
-  // Klick-Tracking für GA4
+  // Klick-Tracking für GA4 + Google Ads Conversion
   const trackLinks = document.querySelectorAll('a.track');
 
   trackLinks.forEach(link => {
-    link.addEventListener('click', function(){
+    link.addEventListener('click', function(e){
+      // GA4 Event
       gtag('event', 'outbound_link_click', {
         'event_category': 'engagement',
         'event_label': this.href,
         'transport_type': 'beacon'
       });
-      // Öffnet Link normal im neuen Tab
-      window.open(this.href, '_blank');
+
+      // Google Ads Conversion
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB',
+        'event_callback': function() {
+          window.open(link.href, '_blank');
+        }
+      });
+
+      // Fallback: Öffnet Link, falls Callback verzögert
+      e.preventDefault();
+      setTimeout(() => window.open(link.href, '_blank'), 1500);
     });
   });
 </script>

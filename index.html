@@ -85,9 +85,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <h1>Herr Boomer</h1>
-
     <div class="subtitle">präsentiert</div>
-
     <div class="tagline">Feine Beats und <br>Sprechgesang</div>
 
     <div class="social-links">
@@ -95,11 +93,27 @@
             <li><a class="track" href="https://open.spotify.com/intl-de/track/2995dk7Sm6dqFsdp8NX9Nu?si=fae622d16c1e4bbd" target="_blank">Spotify</a></li>
             <li><a class="track" href="https://www.instagram.com/herrboomer63/" target="_blank">Instagram</a></li>
             <li><a class="track" href="https://youtube.com/shorts/lqf9QGWnJ0w?si=ZVZIwy2feMKXuj7H" target="_blank">YouTube</a></li>
-                        <li><a class="track" href="https://music.apple.com/de/album/bitte-folgen/1866958394?i=1866958409" target="_blank">Apple Music</a></li>
-                        <li><a class="track" href="https://music.amazon.de/albums/B0GFB412ZM" target="_blank">Amazon Music</a></li>
+            <li><a class="track" href="https://music.apple.com/de/album/bitte-folgen/1866958394?i=1866958409" target="_blank">Apple Music</a></li>
+            <li><a class="track" href="https://music.amazon.de/albums/B0GFB412ZM" target="_blank">Amazon Music</a></li>
             <li><a class="track" href="https://herr-boomer.myspreadshop.de/" target="_blank">Gönnt euch mal was</a></li>
         </ul>
     </div>
+
+<script>
+  // Klicks auf externe Links an GA4 senden
+  const trackLinks = document.querySelectorAll('a.track');
+
+  trackLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      gtag('event', 'outbound_link_click', {
+        'event_category': 'engagement',
+        'event_label': this.textContent.trim(),
+        'transport_type': 'beacon'
+      });
+      // Kein preventDefault – der Link öffnet sich normal im neuen Tab
+    });
+  });
+</script>
 
 </body>
 </html>

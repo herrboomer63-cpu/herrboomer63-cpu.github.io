@@ -50,27 +50,18 @@
         </ul>
     </div>
 
-    <script>
-    // Klick-Tracking für externe Links via GTM
-    const trackLinks = document.querySelectorAll('a.track');
-
-    trackLinks.forEach(link => {
-        link.addEventListener('click', function(e){
-            e.preventDefault(); // verhindert sofortiges Öffnen
-            // Event über dataLayer an GTM senden
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'outbound_link_click',
-                'event_category': 'engagement',
-                'event_label': this.textContent.trim()
-            });
-            // Link nach kurzem Delay öffnen, damit Event gesendet wird
-            setTimeout(() => {
-                window.open(this.href, '_blank');
-            }, 200);
-        });
+<script>
+  // Klick-Tracking für Test in Konsole
+  const trackLinks = document.querySelectorAll('a.track');
+  trackLinks.forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault(); // verhindert das sofortige Öffnen
+      console.log('Klick getrackt:', this.href); // Testausgabe in Konsole
+      // Link normal öffnen
+      window.open(this.href, '_blank');
     });
-    </script>
+  });
+</script>
 
 </body>
 </html>

@@ -100,6 +100,27 @@
             <li><a class="track" href="https://herr-boomer.myspreadshop.de/" target="_blank">Gönnt euch mal was</a></li>
         </ul>
     </div>
+<script>
+  // Funktion, die Klicks auf externe Links trackt
+  function trackOutboundLink(url, label) {
+    gtag('event', 'outbound_link_click', {
+      'event_category': 'engagement',
+      'event_label': label,
+      'transport_type': 'beacon'
+    });
+    // Link normal öffnen
+    window.open(url, '_blank');
+  }
 
+  // Alle Links mit der Klasse "track" auswählen
+  const trackLinks = document.querySelectorAll('a.track');
+
+  trackLinks.forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault(); // verhindert das sofortige Öffnen
+      trackOutboundLink(this.href, this.textContent.trim());
+    });
+  });
+</script>
 </body>
 </html>

@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Herr Boomer</title>
 
-<!-- Google Tag Manager -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFX030LZ3Q"></script>
 <script>
-  // GA4 Initialisierung
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX'); // <-- Hier deine GA4-Mess-ID einfügen
+  gtag('config', 'G-CFX030LZ3Q');
 </script>
-<!-- Ende GA4 -->
 
 <style>
   body { font-family: Arial, sans-serif; background:#f2f2f2; text-align:center; padding:20px;}
@@ -45,21 +43,20 @@
 </div>
 
 <script>
-  // Alle Links mit der Klasse "track" auswählen
+  // Klick-Tracking für alle Links mit der Klasse "track"
   const trackLinks = document.querySelectorAll('a.track');
 
   trackLinks.forEach(link => {
-    link.addEventListener('click', function(e){
-      // GA4 Event senden
+    link.addEventListener('click', function(){
       gtag('event', 'outbound_link_click', {
         'event_category': 'engagement',
         'event_label': this.href,
         'transport_type': 'beacon'
       });
-      // Link normal öffnen
-      // "beacon" sorgt dafür, dass der Klick trotzdem zählt, selbst wenn die Seite wechselt
+      // Link normal öffnen – beacon sorgt, dass GA4 den Klick noch zählt
     });
   });
 </script>
+
 </body>
 </html>

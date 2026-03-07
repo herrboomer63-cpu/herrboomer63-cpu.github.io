@@ -43,7 +43,7 @@
 </div>
 
 <script>
-  // Klick-Tracking für alle Links mit der Klasse "track"
+  // Klick-Tracking für GA4
   const trackLinks = document.querySelectorAll('a.track');
 
   trackLinks.forEach(link => {
@@ -53,7 +53,8 @@
         'event_label': this.href,
         'transport_type': 'beacon'
       });
-      // Link normal öffnen – beacon sorgt, dass GA4 den Klick noch zählt
+      // Öffnet Link normal im neuen Tab
+      window.open(this.href, '_blank');
     });
   });
 </script>

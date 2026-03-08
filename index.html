@@ -14,6 +14,13 @@
   gtag('config', 'G-CFX030LZ3Q');
 </script>
 
+<!-- Google Ads Conversion -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17517951264"></script>
+<script>
+  // GA4 + Ads Setup
+  gtag('config', 'AW-17517951264');
+</script>
+
 <style>
   body { font-family: Arial, sans-serif; background:#f2f2f2; text-align:center; padding:20px;}
   h1{font-size:3rem; margin-bottom:5px; font-weight:700;}
@@ -43,35 +50,29 @@
 </div>
 
 <script>
-  // Google Ads Conversion-ID und Label
-  const ADS_ID = 'AW-17517951264';
-  const ADS_LABEL = 'WfswCJz7n_4bEKDymqFB';
-
-  // Klick-Tracking für alle .track Links
+  // Klick-Tracking für GA4 + Google Ads
   const trackLinks = document.querySelectorAll('a.track');
-
   trackLinks.forEach(link => {
-    link.addEventListener('click', function(event){
+    link.addEventListener('click', function(e){
+      const url = this.href;
 
-      // 1️⃣ GA4 Event
+      // GA4 Event
       gtag('event', 'outbound_link_click', {
         'event_category': 'engagement',
-        'event_label': this.href,
+        'event_label': url,
         'transport_type': 'beacon'
       });
 
-      // 2️⃣ Google Ads Conversion Event
+      // Google Ads Conversion
       gtag('event', 'conversion', {
-        'send_to': `${ADS_ID}/${ADS_LABEL}`,
+        'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB',
+        'event_label': url,
         'value': 1.0,
-        'currency': 'EUR',
-        'event_category': 'engagement',
-        'event_label': this.href,
-        'transport_type': 'beacon'
+        'currency': 'EUR'
       });
 
-      // Link im neuen Tab öffnen
-      window.open(this.href, '_blank');
+      // Link normal im neuen Tab öffnen
+      window.open(url, '_blank');
     });
   });
 </script>

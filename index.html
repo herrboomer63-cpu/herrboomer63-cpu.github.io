@@ -5,18 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Herr Boomer</title>
 
-<!-- GA4 -->
+<!-- Google-Tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFX030LZ3Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'G-CFX030LZ3Q');
+  gtag('config', 'AW-17517951264');
 </script>
 
-<!-- Google Ads Conversion -->
+<!-- Ereignis-Snippet für Conversion-Tracking -->
 <script>
-  gtag('config', 'AW-17517951264');
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
 <style>
@@ -26,7 +39,7 @@
   .tagline{font-size:1.6rem;font-weight:700;width:80%;max-width:400px;margin:0 auto 30px auto;white-space:nowrap;overflow:hidden;}
   .social-links ul{list-style:none;padding:0;margin:0;}
   .social-links li{margin:12px 0;}
-  .social-links a{display:inline-block;width:80%;max-width:400px;padding:14px 20px;background:#008000;color:#fff;text-decoration:none;font-size:1.3rem;font-weight:bold;border-radius:8px;transition:0.2s;}
+  .social-links a{display:inline-block;width:80%;max-width:400px;padding:14px 20px;background:#008000;color:#fff;text-decoration:none;font-size:1.3rem;font-weight:bold;border-radius:8px;transition:0.2s;cursor:pointer;}
   .social-links a:hover{background:#006600;}
 </style>
 </head>
@@ -38,42 +51,11 @@
 
 <div class="social-links">
   <ul>
-    <li><a class="track" href="https://open.spotify.com/track/2995dk7Sm6dqFsdp8NX9Nu" target="_blank">Spotify</a></li>
-    <li><a class="track" href="https://www.instagram.com/herrboomer63/" target="_blank">Instagram</a></li>
-    <li><a class="track" href="https://youtube.com/shorts/lqf9QGWnJ0w" target="_blank">YouTube</a></li>
-    <li><a class="track" href="https://music.apple.com/de/album/bitte-folgen/1866958394?i=1866958409" target="_blank">Apple Music</a></li>
-    <li><a class="track" href="https://music.amazon.de/albums/B0GFB412ZM" target="_blank">Amazon Music</a></li>
-    <li><a class="track" href="https://herr-boomer.myspreadshop.de/" target="_blank">Merch</a></li>
+    <li><a class="track" onclick="return gtag_report_conversion('https://open.spotify.com/track/2995dk7Sm6dqFsdp8NX9Nu');" href="https://open.spotify.com/track/2995dk7Sm6dqFsdp8NX9Nu" target="_blank">Spotify</a></li>
+    <li><a class="track" onclick="return gtag_report_conversion('https://www.instagram.com/herrboomer63/');" href="https://www.instagram.com/herrboomer63/" target="_blank">Instagram</a></li>
+    <li><a class="track" onclick="return gtag_report_conversion('https://youtube.com/shorts/lqf9QGWnJ0w');" href="https://youtube.com/shorts/lqf9QGWnJ0w" target="_blank">YouTube</a></li>
   </ul>
 </div>
-
-<script>
-  // Klicktracking für GA4 + Google Ads
-  const trackLinks = document.querySelectorAll('a.track');
-  trackLinks.forEach(link => {
-    link.addEventListener('click', function(e){
-      const url = this.href;
-
-      // GA4 Event
-      gtag('event', 'outbound_link_click', {
-        'event_category': 'engagement',
-        'event_label': url,
-        'transport_type': 'beacon'
-      });
-
-      // Google Ads Conversion
-      gtag('event', 'conversion', {
-        'send_to': 'AW-17517951264/WfswCJz7n_4bEKDymqFB',
-        'event_label': url,
-        'value': 1.0,
-        'currency': 'EUR'
-      });
-
-      // Link normal öffnen
-      window.open(url, '_blank');
-    });
-  });
-</script>
 
 </body>
 </html>

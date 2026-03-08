@@ -19,18 +19,12 @@
     <!-- Ereignis-Snippet für Conversion-Tracking -->
     <script>
     function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
       gtag('event', 'conversion', {
           'send_to': 'AW-17517951264/5fTtCL2X4IQcEKDymqFB',
           'value': 1.0,
-          'currency': 'EUR',
-          'event_callback': callback
+          'currency': 'EUR'
       });
-      return false;
+      return true; // Erlaubt dem Browser, das href-Ziel (im neuen Tab) zu öffnen
     }
     </script>
 
@@ -53,12 +47,12 @@
 
     <div class="social-links">
         <ul>
-            <li><a class="track" onclick="return gtag_report_conversion('https://open.spotify.com/intl-de/track/2995dk7Sm6dqFsdp8NX9Nu?si=fae622d16c1e4bbd');" href="https://open.spotify.com/intl-de/track/2995dk7Sm6dqFsdp8NX9Nu?si=fae622d16c1e4bbd" target="_blank">Spotify</a></li>
-            <li><a class="track" onclick="return gtag_report_conversion('https://www.instagram.com/herrboomer63/');" href="https://www.instagram.com/herrboomer63/" target="_blank">Instagram</a></li>
-            <li><a class="track" onclick="return gtag_report_conversion('https://youtube.com/shorts/lqf9QGWnJ0w?si=ZVZIwy2feMKXuj7H');" href="https://youtube.com/shorts/lqf9QGWnJ0w?si=ZVZIwy2feMKXuj7H" target="_blank">YouTube</a></li>
-            <li><a class="track" onclick="return gtag_report_conversion('https://music.apple.com/de/album/bitte-folgen/1866958394?i=1866958409');" href="https://music.apple.com/de/album/bitte-folgen/1866958394?i=1866958409" target="_blank">Apple Music</a></li>
-            <li><a class="track" onclick="return gtag_report_conversion('https://music.amazon.de/albums/B0GFB412ZM');" href="https://music.amazon.de/albums/B0GFB412ZM" target="_blank">Amazon Music</a></li>
-            <li><a class="track" onclick="return gtag_report_conversion('https://herr-boomer.myspreadshop.de/');" href="https://herr-boomer.myspreadshop.de/" target="_blank">Gönnt euch mal was</a></li>
+            <li><a class="track" onclick="gtag_report_conversion('https://open.spotify.com/intl-de/track/2995dk7Sm6dqFsdp8NX9Nu?si=fae622d16c1e4bbd');" href="https://open.spotify.com/intl-de/track/2995dk7Sm6dqFsdp8NX9Nu?si=fae622d16c1e4bbd" target="_blank">Spotify</a></li>
+            <li><a class="track" onclick="gtag_report_conversion('https://www.instagram.com/herrboomer63/');" href="https://www.instagram.com/herrboomer63/" target="_blank">Instagram</a></li>
+            <li><a class="track" onclick="gtag_report_conversion('https://youtube.com/shorts/lqf9QGWnJ0w?si=ZVZIwy2feMKXuj7H');" href="https://youtube.com/shorts/lqf9QGWnJ0w?si=ZVZIwy2feMKXuj7H" target="_blank">YouTube</a></li>
+            <li><a class="track" onclick="gtag_report_conversion('https://music.apple.com/de/album/bitte-folgen/1866958394?i=1866958409');" href="https://music.apple.com/de/album/bitte-folgen/1866958394?i=1866958409" target="_blank">Apple Music</a></li>
+            <li><a class="track" onclick="gtag_report_conversion('https://music.amazon.de/albums/B0GFB412ZM');" href="https://music.amazon.de/albums/B0GFB412ZM" target="_blank">Amazon Music</a></li>
+            <li><a class="track" onclick="gtag_report_conversion('https://herr-boomer.myspreadshop.de/');" href="https://herr-boomer.myspreadshop.de/" target="_blank">Gönnt euch mal was</a></li>
         </ul>
     </div>
 
